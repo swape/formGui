@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="formGui.css"  rel="stylesheet" type="text/css" media="all"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" ></script>
+        <script src="formGui.js" type="text/javascript" ></script>
+        <style type="text/css">
+*{padding:0;margin:0}    
+p{padding:10px;}
+body{font-size: 14px;line-height: 19px;font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;}            
+.paddabit{padding:2px 30px;}
+.sections{border:1px solid #777;padding:30px;overflow:hidden;
+background:#fff -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#FFF));
+background:#fff -moz-linear-gradient(-90deg, #f2f2f2, #FFF);
+background:#fff -o-linear-gradient(-90deg, #f2f2f2, #FFF);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFf2f2f2', endColorstr='#FFFFFFFF');
+min-height:100px;margin:1px auto;border-radius:5px 5px 30px 5px;
+}
+        </style>
+    </head>
+    <body>
+<div class="paddabit">
+    <form method="post" action="">
+         <div class="sections">
+            <h2>class="niceprelabel"</h2><br/>
+            <label class="niceprelabel"><span>Username:</span><input name="myinput" type="text" value=""/></label><br/>
+            <label class="niceprelabel"><span>Password:</span><input name="myinput" type="password" value=""/></label>
+         </div>       
+         <div class="sections">
+            <h2>class="niceprelabel2"</h2><br/>
+            <label class="niceprelabel2"><span>Username:</span><input name="myinput" type="text" value=""/></label><br/>
+            <label class="niceprelabel2"><span>Password:</span><input name="myinput" type="password" value=""/></label>
+         </div>    
+        
+
+        
+         <div class="sections">
+<h2>HTML5 FORM INPUTS</h2>
+Date: <input type="date" name="mdate"  /><br/>
+Month: <input type="month"  name="mmonth" /><br/>
+Week: <input type="week"  name="mweek" /><br/>
+Time: <input type="time"  name="mtime" /><br/>
+Datetime: <input type="datetime"  name="mdatetime" /><br/>
+Datetime local: <input type="datetime-local"  name="mdatetime-local" /><br/>
+Search: <input type="search"  name="msearch" /><br/>
+Color: <input type="color"  name="mcolor" value="#ddffee"/><br/>
+Email: <input type="email" name="myemail"  /><br/>
+URL: <input type="url"  name="myurl" /><br/>
+Number: <input type="number" name="" min="0" max="10" step="2" value="6"/><br/>
+Range: <input type="range" min="0" max="10" step="2" value="6" /><br/>
+Required input: <input id="q" name="mrequired" required="required" /><br/>
+Placeholder: <input  name="mplaceholder"  type="text" placeholder="Here is a placeholder text" /><br/>
+<br/>
+         </div>
+        
+        
+        
+        
+        <div class="sections">
+        <h2>SELECT</h2>
+<select name="selectnavn1">
+    <option value="verdien">En sånn sak 1 dslfjhsdlf dslsd hlfkj ldkfjl</option>
+    <option value="2" selected="selected">En sånn sak 2</option>
+    <option value="3">En sånn sak 3</option>
+    <optgroup  label="Option Group 1">
+        <option  value="4">En sånn sak 4</option>
+        <option  value="5">En sånn sak 5</option>
+        <option  value="6">En sånn sak 6</option>
+    </optgroup>
+    <optgroup  label="Option Group 2">
+        <option>En sånn sak</option>
+        <option>En sånn sak 2</option>
+    </optgroup>
+    <optgroup  label="Option Group 3">
+        <option>En sånn sak 4</option>
+        <option>En sånn sak 6</option>
+        <option>En sånn sak 8</option>
+    </optgroup>                
+</select>
+            
+<br/>
+<br/>Multiple select:<br/><select name="selectnavn2" multiple="multiple">
+    <option>a</option>
+    <option>b</option>
+    <option>c</option>
+    <optgroup  label="Swedish Cars">
+        <option>x</option>
+        <option>y</option>
+        <option>z</option>
+    </optgroup>
+    <optgroup  label="Swedish Cars">
+        <option>dgsd</option>
+        <option> sfas f afs asf</option>
+        <option>as fasf asfa asf as</option>
+    </optgroup>
+
+</select><br/>
+        </div>
+  <div class="sections">       
+        
+        
+        
+Input type="text": <input type="text" name="myinput" value="3" /><br/>
+Link class="button": <a href="#" class="button">Knapp</a><br/>
+<textarea cols="45" rows="10">Textarea</textarea>
+<br/>
+Input type="password":<input type="password" name="myinput" value="password" /><br/>
+Input type="text" readonly="readonly": <input type="text" readonly="readonly" name="myinput" value="readonly" /><br/>
+Input type="text" disabled="disabled": <input type="text" disabled="disabled" name="myinput" value="Disabled" /><br/>
+Input type="file": <input type="file" name="datafile" title="File:"/>
+<br/>
+  </div>
+
+         <div class="sections">
+<h2>INPUT BUTTONS</h2>
+Input type="button": <input type="button" name="mib" value="input type button" /><br/>
+Input type="button" disabled="disabled": <input type="button" disabled="disabled" name="mbbd" value="Disabled input button" /><br/>
+Input type="reset": <input type="reset"  name="mir" value="Reset input " /><br/>
+Input type="submit": <input type="submit"  name="mis" value="Submit input " /><br/>
+<br/>
+         </div>
+         <div class="sections">
+<h2>BUTTONS</h2>
+Button type="button": <button type="button">button</button><br/>
+Button type="reset": <button type="reset">reset</button><br/>
+Button type="submit": <button type="submit">submit</button><br/>
+Button type="submit": <button type="submit">submit</button><br/>
+         </div>
+         <div class="sections">
+<h2>Checkbox and Radio</h2>
+<p>
+    <label><input type="checkbox" name="c1" value="sdsd"/><span>Checkbox tekst</span></label>
+    <label><input type="checkbox" name="c2" value="sdsd" checked="checked"/><span>Checkbox Checked</span></label>
+    <label><input type="radio" name="r1" value="a"/><span>a</span></label>
+    <label><input type="radio" name="r1" value="b"/><span>b</span></label>
+    <label><input type="radio" name="r1" value="c"/><span>c</span></label>
+    <label><input type="radio" name="r1" value="d"/><span>d</span></label>
+</p>
+
+<fieldset>
+    <label><input type="checkbox" name="c3" value="sdsd"/><span>Checkbox tekst</span></label>
+    <label><input type="checkbox" name="c4" value="sdsd" checked="checked"/><span>Checkbox Checked</span></label>
+</fieldset>
+<fieldset>
+<legend>Legend text</legend>
+    <label><input type="checkbox" name="c5" value="sdsd"/><span>Checkbox tekst</span></label>
+    <label><input type="checkbox" name="c6" value="sdsd" checked="checked"/><span>Checkbox Checked</span></label>
+</fieldset>
+<br/>
+        
+<fieldset>
+    <label><input type="radio" name="af" value="a" checked="checked"/><span>blablabla 1</span></label><br/>
+    <label><input type="radio" name="af" value="b"/><span> blablablab 2</span></label><br/>
+    <label><input type="radio" name="af" value="c"/><span>blablablac 3</span></label><br/>
+    <label><input type="radio" name="af" value="d"/><span>blablablad4 4</span></label><br/>
+</fieldset>    
+        
+<fieldset>
+    <legend>Legend text</legend>
+    <label><input type="radio" name="adf" value="a"/><span>ddblablabla 1</span></label><br/>
+    <label><input type="radio" name="adf" value="b"/><span>dd blablablab 2</span></label><br/>
+    <label><input type="radio" name="adf" value="c"  checked="checked" /><span>ddblablablac 3</span></label><br/>
+    <label><input type="radio" name="adf" value="d"/><span>ddblablablad4 4</span></label><br/>
+</fieldset> 
+<br/>
+         </div>
+
+</form>
+        
+    </body>
+</html>

@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>FormGui</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="formGui.css"  rel="stylesheet" type="text/css" media="all"/>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" ></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript" ></script>
+        
         <script src="formGui.js" type="text/javascript" ></script>
+        <link href="formGui.css"  rel="stylesheet" type="text/css" media="all"/>
+        
         <style type="text/css">
-            @import url(https://fonts.googleapis.com/css?family=Bowlby+One+SC);
+@import url(https://fonts.googleapis.com/css?family=Bowlby+One+SC);
 *{padding:0;margin:0}    
-p{padding:10px;}
-body{font-size: 13px;line-height: 19px;font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;text-align:center}            
-.paddabit{padding:2px 30px;}
-.sections{border:1px solid #777;padding:30px;overflow:hidden;margin: 0 auto;width: 500px;text-align:left;
+p{padding:10px}
+body{font-size:13px;line-height:19px;font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;text-align:center}            
+.paddabit{padding:2px 30px}
+.sections{border:1px solid #777;padding:30px;overflow:hidden;margin:0 auto;width:500px;text-align:left;
 background:#fff -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#FFF));
 background:#fff -moz-linear-gradient(-90deg, #f2f2f2, #FFF);
 background:#fff -o-linear-gradient(-90deg, #f2f2f2, #FFF);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFf2f2f2', endColorstr='#FFFFFFFF');
-min-height:100px;margin:1px auto;border-radius:5px 5px 30px 5px;}
-h1{font-weight: 400; font-size: 60px;text-shadow:2px 2px 2px rgba(255,255,255,1);font-family: 'Bowlby One SC', sans-serif;color:#444;margin:20px;}
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFf2f2f2', endColorstr='#FFFFFFFF');
+min-height:100px;margin:1px auto;border-radius:5px 5px 30px 5px}
+h1{font-weight:400;font-size:60px;text-shadow:2px 2px 2px rgba(255,255,255,1);font-family:'Bowlby One SC', sans-serif;color:#444;margin:20px}
         </style>
     </head>
     <body>
@@ -37,29 +39,24 @@ h1{font-weight: 400; font-size: 60px;text-shadow:2px 2px 2px rgba(255,255,255,1)
             <label class="niceprelabel2"><span>Password:</span><input name="myinput" type="password" value=""/></label>
          </div>    
         
-
-        
          <div class="sections">
-<h2>HTML5 FORM INPUTS</h2>
-Date: <input type="date" name="mdate"  /><br/>
-Month: <input type="month"  name="mmonth" /><br/>
-Week: <input type="week"  name="mweek" /><br/>
-Time: <input type="time"  name="mtime" /><br/>
-Datetime: <input type="datetime"  name="mdatetime" /><br/>
-Datetime local: <input type="datetime-local"  name="mdatetime-local" /><br/>
-Search: <input type="search"  name="msearch" /><br/>
-Color: <input type="color"  name="mcolor" value="#ddffee"/><br/>
-Email: <input type="email" name="myemail"  /><br/>
-URL: <input type="url"  name="myurl" /><br/>
-Number: <input type="number" name="" min="0" max="10" step="2" value="6"/><br/>
-Range: <input type="range" min="0" max="10" step="2" value="6" /><br/>
-Required input: <input id="q" name="mrequired" required="required" /><br/>
-Placeholder: <input  name="mplaceholder"  type="text" placeholder="Here is a placeholder text" /><br/>
-<br/>
+            <h2>HTML5 FORM INPUTS</h2>
+            Date: <input type="date" name="mdate"  /><br/>
+            Month: <input type="month"  name="mmonth" /><br/>
+            Week: <input type="week"  name="mweek" /><br/>
+            Time: <input type="time"  name="mtime" /><br/>
+            Datetime: <input type="datetime"  name="mdatetime" /><br/>
+            Datetime local: <input type="datetime-local"  name="mdatetime-local" /><br/>
+            Search: <input type="search"  name="msearch" /><br/>
+            Color: <input type="color"  name="mcolor" value="#ddffee"/><br/>
+            Email: <input type="email" name="myemail"  /><br/>
+            URL: <input type="url"  name="myurl" /><br/>
+            Number: <input type="number" name="" min="0" max="10" step="2" value="6"/><br/>
+            Range: <input type="range" min="0" max="10" step="2" value="6" /><br/>
+            Required input: <input id="q" name="mrequired" required="required" /><br/>
+            Placeholder: <input  name="mplaceholder"  type="text" placeholder="Here is a placeholder text" /><br/>
+            <br/>
          </div>
-        
-        
-        
         
         <div class="sections">
         <h2>SELECT</h2>
@@ -82,7 +79,15 @@ Placeholder: <input  name="mplaceholder"  type="text" placeholder="Here is a pla
         <option>I'm the last one</option>
     </optgroup>                
 </select>
-            
+
+<select name="selectnavn2" >
+    <option value="verdien">Option #1</option>
+    <option value="2" selected="selected">The other option in select #2</option>
+    <option value="3">And here is a long option to see how this is going to be</option>
+</select>        
+        
+        
+        
 <br/>
 <br/>Multiple select:<br/><select name="selectnavn2" multiple="multiple">
     <option>a</option>
@@ -101,56 +106,58 @@ Placeholder: <input  name="mplaceholder"  type="text" placeholder="Here is a pla
 
 </select><br/>
         </div>
+        
   <div class="sections">       
-        
-        
-        
-Input type="text": <input type="text" name="myinput" value="3" /><br/>
-Link class="button": <a href="#" class="button">Knapp</a><br/>
-<textarea cols="45" rows="10">Textarea</textarea>
-<br/>
-Input type="password":<input type="password" name="myinput" value="password" /><br/>
-Input type="text" readonly="readonly": <input type="text" readonly="readonly" name="myinput" value="readonly" /><br/>
-Input type="text" disabled="disabled": <input type="text" disabled="disabled" name="myinput" value="Disabled" /><br/>
-Input type="file": <input type="file" name="datafile" title="File:"/>
-<br/>
+    Input type="text": <input type="text" name="myinput" value="3" /><br/>
+    Link class="button": <a href="#" class="button">Knapp</a><br/>
+    <textarea cols="45" rows="10">Textarea</textarea>
+    <br/>
+    Input type="password":<input type="password" name="myinput" value="password" /><br/>
+    Input type="text" readonly="readonly": <input type="text" readonly="readonly" name="myinput" value="readonly" /><br/>
+    Input type="text" disabled="disabled": <input type="text" disabled="disabled" name="myinput" value="Disabled" /><br/>
+    Input type="file": <input type="file" name="datafile" title="File:"/>
+    <br/>
   </div>
 
          <div class="sections">
-<h2>INPUT BUTTONS</h2>
-Input type="button": <input type="button" name="mib" value="input type button" /><br/>
-Input type="button" disabled="disabled": <input type="button" disabled="disabled" name="mbbd" value="Disabled input button" /><br/>
-Input type="reset": <input type="reset"  name="mir" value="Reset input " /><br/>
-Input type="submit": <input type="submit"  name="mis" value="Submit input " /><br/>
-<br/>
+            <h2>INPUT BUTTONS</h2>
+            Input type="button": <input type="button" name="mib" value="input type button" /><br/>
+            Input type="button" disabled="disabled": <input type="button" disabled="disabled" name="mbbd" value="Disabled input button" /><br/>
+            Input type="reset": <input type="reset"  name="mir" value="Reset input " /><br/>
+            Input type="submit": <input type="submit"  name="mis" value="Submit input " /><br/>
+            <br/>
          </div>
+        
          <div class="sections">
-<h2>BUTTONS</h2>
-Button type="button": <button type="button">button</button><br/>
-Button type="reset": <button type="reset">reset</button><br/>
-Button type="submit": <button type="submit">submit</button><br/>
-Button type="submit": <button type="submit">submit</button><br/>
+            <h2>BUTTONS</h2>
+            Button type="button": <button type="button">button</button><br/>
+            Button type="reset": <button type="reset">reset</button><br/>
+            Button type="submit": <button type="submit">submit</button><br/>
+            Button type="submit": <button type="submit">submit</button><br/>
          </div>
+        
          <div class="sections">
-<h2>Checkbox and Radio</h2>
-<p>
-    <label><input type="checkbox" name="c1" value="sdsd" id="mycheckboxid"/><span>Checkbox tekst</span></label>
-    <label><input type="checkbox" name="c2" value="sdsd" checked="checked"/><span>Checkbox Checked</span></label>
-    <label><input type="radio" name="r1" value="a"/><span>a</span></label>
-    <label><input type="radio" name="r1" value="b" id="ihaveanid" /><span>b</span></label>
-    <label><input type="radio" name="r1" value="c" id="metoo"/><span>c</span></label>
-    <label><input type="radio" name="r1" value="d"/><span>d</span></label>
-</p>
+            <h2>Checkbox and Radio</h2>
+            <p>
+                <label><input type="checkbox" name="c1" value="sdsd" id="mycheckboxid"/><span>Checkbox tekst</span></label>
+                <label><input type="checkbox" name="c2" value="sdsd" checked="checked"/><span>Checkbox Checked</span></label>
+                <label><input type="radio" name="r1" value="a"/><span>a</span></label>
+                <label><input type="radio" name="r1" value="b" id="ihaveanid" /><span>b</span></label>
+                <label><input type="radio" name="r1" value="c" id="metoo"/><span>c</span></label>
+                <label><input type="radio" name="r1" value="d"/><span>d</span></label>
+            </p>
 
 <fieldset>
     <label><input type="checkbox" name="c3" value="sdsd"/><span>Checkbox tekst</span></label>
     <label><input type="checkbox" name="c4" value="sdsd" checked="checked"/><span>Checkbox Checked</span></label>
 </fieldset>
+
 <fieldset>
 <legend>Legend text</legend>
     <label><input type="checkbox" name="c5" value="sdsd"/><span>Checkbox tekst</span></label>
     <label><input type="checkbox" name="c6" value="sdsd" checked="checked"/><span>Checkbox Checked</span></label>
 </fieldset>
+
 <br/>
         
 <fieldset>
@@ -170,7 +177,20 @@ Button type="submit": <button type="submit">submit</button><br/>
 <br/>
          </div>
 
+        <div class="sections">
+            <button type="button">button</button><br/>
+            <input type="file" name="datafile" title="File:"/>
+            <input type="text" name="mdate" />
+            Text:<select name="selectnavn231">
+                <option>a</option>
+                <option>b more info here</option>
+                <option>c another thing here</option>
+            </select>
+            <input type="text" name="mdate" />
+            and some more text here
+            <textarea cols="45" rows="10">Textarea</textarea>
+        </div>
 </form>
-        
-    </body>
+</div>
+</body>
 </html>

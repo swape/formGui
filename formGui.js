@@ -87,10 +87,13 @@ $(document).ready(function(){
     });
     
     $('select').live('change' ,function(){
-        if( $(this).attr('multiple') != 'multiple' ){
-            var selText = $(this + 'option:selected').text();
-            $('#s' + $(this).attr('id') + ' .selecttitle').html(selText);
+        $(this).each(function(){
+            if( $(this).attr('multiple') != 'multiple' ){
+                var thisID = $(this).attr('id');
+                var selText = $('#' + thisID + ' option:selected').text();
+                $('#s' + thisID + ' .selecttitle').html(selText);
         }
+        })
     });
     $('select').change();
     
@@ -116,28 +119,7 @@ $(document).ready(function(){
               $( '#i' + spanid +  ' .filename').html(myfilename);
            }
     });
-    /*
-    if(!$.browser.mozilla){
-        $('.filecontainer').live('mousemove' , function(e){
-                var offset = $(this).offset();
-                $( '#' + $(this).attr('rel') ).css({
-                    'margin-left' : 0, 
-                    'position':'absolute',
-                    'margin-top' : e.pageY - offset.top - 40,
-                    'margin-left' : e.pageX - offset.left - 10,
-                    'display':'block',
-                    'opacity': 0,
-                    'width' : '30'
-                });
-        });        
-        
-        $('input[type=file]').live( 'mouseout' , function(e){
-           $(this).hide();
-        });
-    }
-    */
     $('label.niceprelabel2 span').css({'height' :  ( $('label.niceprelabel2 input').outerHeight() - $('label.niceprelabel2 span').css('padding-top')) })
-    
     $('.filecontainer').click(function(){
         $( '#' + $(this).attr('rel') ).trigger('click');
     });

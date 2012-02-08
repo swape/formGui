@@ -113,32 +113,32 @@ text-shadow:0 1px 1px rgba(255,255,255,0.6);box-shadow:0 0 4px rgba(0,0,0,0.1)}
 background:#fff -moz-linear-gradient(-90deg, #f2f2f2, #d3d3d3);
 background:#fff -o-linear-gradient(-90deg, #f2f2f2, #d3d3d3);
 filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFf2f2f2', endColorstr='#FFd3d3d3');
-box-shadow:0 0 6px rgba(0,0,0,0.2);border:1px solid #555;border-radius:5px;padding:3px 10px;
-text-shadow:0 1px 1px rgba(255,255,255,0.6);display:inline-block;overflow:hidden;width:250px;margin:10px 3px -7px 3px}
+box-shadow:0 0 6px rgba(0,0,0,0.2);border:1px solid #555;border-radius:5px;padding:2px 10px 1px 10px;
+text-shadow:0 1px 1px rgba(255,255,255,0.6);display:inline-block;overflow:hidden;width:250px;margin:5px 3px -7px 3px}
 .fileuploadtitle{float:left}
 .filenamediv{float:right}
 
 /*SELECT*/
-.selectcontainer{overflow:hidden;min-width:100px;max-width:350px;position:absolute}
+.selectcontainer{overflow:hidden;min-width:100px;max-width:350px;display:inline-block;margin:1px;padding-top:10px;margin-bottom:-8px}
 .selectbox{border:1px solid #ccc;padding:5px;display:none;
 background:#fff -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#EFEFEF));
 background:#fff -moz-linear-gradient(-90deg, #f2f2f2, #EFEFEF);
 background:#fff -o-linear-gradient(-90deg, #f2f2f2, #EFEFEF);
 filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFf2f2f2', endColorstr='#FFEFEFEF');
-box-shadow:0 8px 9px rgba(0,0,0,0.5);border-radius:3px;
-}
+box-shadow:0 8px 9px rgba(0,0,0,0.5);border-radius:0 0 3px 3px;position:absolute;border-top:0px solid #fff}
 .selectbox a{display:block;padding:3px 8px;margin-bottom:1px;background-color:#f2f2f2;-webkit-transition:all 100ms linear;-moz-transition:all 100ms linear;
 -o-transition:all 100ms linear;transition:all 100ms linear;         
 color:#444;text-decoration:none;text-shadow:0 1px 1px rgba(255,255,255,0.6);border-bottom:1px solid #DDD;
 border-radius:5px;font-size:0.9em}
 .selectbox a:hover , a.activeSelect{background-color:#666;color:#fff;text-shadow:0 1px 1px rgba(0,0,0,0.8)}
 .bigselect{height:260px;overflow-y:scroll}
-.selecttitle{display:table-cell;padding:2px 10px;font-size:100%;line-height:145%;
+.selecttitle{display:table-cell;padding:2px 10px 3px 10px;font-size:100%;line-height:145%;
 border:1px solid #ccc;cursor:pointer;background:#fff -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#EFEFEF));
 background:#fff -moz-linear-gradient(-90deg, #f2f2f2, #EFEFEF);
 background:#fff -o-linear-gradient(-90deg, #f2f2f2, #EFEFEF);
 filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFf2f2f2', endColorstr='#FFEFEFEF');
 border-radius:3px 0px 0px 3px;text-shadow:0 -1px 1px rgba(255,255,255,0.6);
+min-width:200px;
 }
 .selectarrow{cursor:pointer;background-color:#f2f2f2;display:table-cell;padding:0px 3px;border:1px solid #ccc;border-left:0px solid #fff;border-radius:0px 3px 3px 0px}
 .selectname:hover .selecttitle{box-shadow:0 0 10px rgba(0,0,0,0.2) inset}

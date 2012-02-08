@@ -68,7 +68,7 @@ $(document).ready(function(){
     });
     
     $('.selectname').live('click',function(){
-        $('#' + $(this).attr('rel') ).slideDown();
+        $('#' + $(this).attr('rel') ).slideToggle();
         return false;
     });
     
@@ -83,6 +83,7 @@ $(document).ready(function(){
         
         $(this).addClass('activeSelect');
         $(this).parent().slideUp();
+        $(thisSel).change();
         return false;
     });
     
@@ -95,6 +96,7 @@ $(document).ready(function(){
         }
         })
     });
+    
     $('select').change();
     
     

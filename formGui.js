@@ -34,61 +34,22 @@ $(document).ready(function(){
     });
        
     $('input[type=radio]').change(function(){
-            $('input[name=' + $(this).attr('name') + ']').parent().children('span.radio').removeClass('radio2');
-            $(this).parent().children('span.radio').addClass('radio2');
+        $('input[name=' + $(this).attr('name') + ']').parent().children('span.radio').removeClass('radio2');
+        $(this).parent().children('span.radio').addClass('radio2');
     });
     
     $('button').each(function(i){
-            $(this).after('<a href="#" class="button" id="sb-' + i + '" onclick="' + "$('#sbs-" + i + "').trigger('click');return false;" + '" >' + $(this).html() + '</a>');
-            $(this).attr('id', 'sbs-' + i ).hide();
+        $(this).after('<a href="#" class="button" id="sb-' + i + '" onclick="' + "$('#sbs-" + i + "').trigger('click');return false;" + '" >' + $(this).html() + '</a>');
+        $(this).attr('id', 'sbs-' + i ).hide();
     });
     
     $('input[type=submit] , input[type=reset] , input[type=button]').each(function(i){
-            $(this).after('<a href="#" class="button" id="ib-' + i + '" onclick="' + "$('#ibs-" + i + "').trigger('click');return false;" + '" >' + $(this).val() + '</a>');
-            $(this).attr('id', 'ibs-' + i ).hide();
+        $(this).after('<a href="#" class="button" id="ib-' + i + '" onclick="' + "$('#ibs-" + i + "').trigger('click');return false;" + '" >' + $(this).val() + '</a>');
+        $(this).attr('id', 'ibs-' + i ).hide();
     });
-/* Select */
-/*
-    $('select').each(function(i){
-        var selFirst = '...';
-        if( $(this).attr('multiple') != 'multiple' ){
-            $(this).after('<div class="selectcontainer" rel="' + 's-' + i + '" id="ss-' + i + '" ><div class="selectname" >' 
-            + selFirst + '</div><div class="dropdownicon"><span>*</span></div></div>');
-            $(this).attr('id', 's-' + i );
-        }
-    });
-    
-    $('.selectcontainer').live( 'mousemove' , function(e){
-        var offset = $(this).offset();
-        $( '#' + $(this).attr('rel') ).css({'margin-left' : 0, 'margin-top' : e.pageY - offset.top - 10,'display':'block' , width : $(this).width() });
-    });
-    
-    $('select').live( 'mouseout' , function(e){
-        if( $(this).attr('multiple') != 'multiple' ){
-            $(this).next().removeClass('selecthover');
-        }
-    });
-    
-    $('select').live('mouseover' , function(){
-        if( $(this).attr('multiple') != 'multiple' ){
-            $(this).next().addClass('selecthover');
-        }
-    });
-    
-    $('select').live('change' ,function(){
-        if( $(this).attr('multiple') != 'multiple' ){
-            var selText = $(this + 'option:selected').text();
-            $('#s' + $(this).attr('id') + ' .selectname').html(selText);
-        }
-    });
-    $('select').change();
-
-*/
  
    $('select').each(function(i){
-        var selFirst = '...';
         if( $(this).attr('multiple') != 'multiple' ){
-            // getting the content
             var strInner = '';
             var intCount = 0;
             $(this).find('option').each(function(){
@@ -99,17 +60,17 @@ $(document).ready(function(){
             if(intCount >= 4){
                 strBigSelect = ' bigselect';
             }
-            
             $(this).after('<div class="selectcontainer " rel="' + 's-' + i + '" id="ss-' + i + '" ><div class="selectname" rel="selOp' + i + '" ><div class="selecttitle">...</div><div class="selectarrow"><span></span></div></div><div id="selOp' + i + '" class="selectbox' + strBigSelect + '" >' 
             + strInner + '</div></div>');
             $(this).attr('id', 's-' + i );
             $(this).hide();
         }
     });
+    
     $('.selectname').live('click',function(){
         $('#' + $(this).attr('rel') ).slideDown();
+        return false;
     });
-    
     
     $('.selectitems').live('click', function(){
         $(this).parent().find('a.activeSelect').removeClass('activeSelect');
@@ -123,7 +84,6 @@ $(document).ready(function(){
         $(this).addClass('activeSelect');
         $(this).parent().slideUp();
         return false;
-        
     });
     
     $('select').live('change' ,function(){
@@ -141,7 +101,7 @@ $(document).ready(function(){
         if($(this).attr('title')){ selFirst = $(this).attr('title'); }
             $(this).after('<div class="filecontainer" rel="' + 'f-' + i + '" id="if-' + i + '" ><div class="fileuploadtitle" >' 
             + selFirst + '</div><div class="filenamediv"><span class="filename"></span></div></div>');
-            $(this).attr('id', 'f-' + i ).hide();
+            $(this).attr('id', 'f-' + i );
     });
     
     $('input[type=file]').change(function(){
@@ -156,7 +116,7 @@ $(document).ready(function(){
               $( '#i' + spanid +  ' .filename').html(myfilename);
            }
     });
-    
+    /*
     if(!$.browser.mozilla){
         $('.filecontainer').live('mousemove' , function(e){
                 var offset = $(this).offset();
@@ -175,7 +135,7 @@ $(document).ready(function(){
            $(this).hide();
         });
     }
-    
+    */
     $('label.niceprelabel2 span').css({'height' :  ( $('label.niceprelabel2 input').outerHeight() - $('label.niceprelabel2 span').css('padding-top')) })
     
     $('.filecontainer').click(function(){

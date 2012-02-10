@@ -120,7 +120,7 @@ text-shadow:0 1px 1px rgba(255,255,255,0.6);display:inline-block;overflow:hidden
 
 /*SELECT*/
 .selectcontainer{overflow:hidden;min-width:100px;max-width:350px;display:inline-block;margin:1px;padding-top:10px;margin-bottom:-8px}
-.selectbox{border:1px solid #ccc;padding:5px;display:none;z-index:1000;
+.selectbox{border:1px solid #ccc;padding:5px;display:none;z-index:1000;min-width:210px;
 background:#fff -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#EFEFEF));
 background:#fff -moz-linear-gradient(-90deg, #f2f2f2, #EFEFEF);
 background:#fff -o-linear-gradient(-90deg, #f2f2f2, #EFEFEF);

@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('input').each(function(){
         var inputType = $(this).attr('type');
-        if( inputType != 'radio' && inputType != 'checkbox' && inputType != 'button' && inputType != 'reset' && inputType != 'submit' && inputType != 'range' ){
+        if( inputType != 'file' && inputType != 'radio' && inputType != 'checkbox' && inputType != 'button' && inputType != 'reset' && inputType != 'submit' && inputType != 'range' ){
             $(this).addClass('input');
         }
     });
@@ -38,12 +38,21 @@ $(document).ready(function(){
         $(this).parent().children('span.radio').addClass('radio2');
     });
     
-    $('button').each(function(i){
+    $('button[type!=submit]').each(function(i){
         $(this).after('<a href="#" class="button" id="sb-' + i + '" onclick="' + "$('#sbs-" + i + "').trigger('click');return false;" + '" >' + $(this).html() + '</a>');
         $(this).attr('id', 'sbs-' + i ).hide();
     });
     
-    $('input[type=submit] , input[type=reset] , input[type=button]').each(function(i){
+    $('button[type=submit] , input[type=submit]').each(function(i){
+        var thisVal = $(this).val();
+        if(thisVal == ''){
+            thisVal = $(this).html();
+        }
+        $(this).after('<a href="#" class="button" id="sbs-' + i + '" onclick="' + "$(this).closest('form').submit();return false;" + '" >' + thisVal + '</a>');
+        $(this).hide();
+    });
+    
+    $('input[type=reset] , input[type=button]').each(function(i){
         $(this).after('<a href="#" class="button" id="ib-' + i + '" onclick="' + "$('#ibs-" + i + "').trigger('click');return false;" + '" >' + $(this).val() + '</a>');
         $(this).attr('id', 'ibs-' + i ).hide();
     });
@@ -121,8 +130,12 @@ $(document).ready(function(){
               $( '#i' + spanid +  ' .filename').html(myfilename);
            }
     });
-    $('label.niceprelabel2 span').css({'height' :  ( $('label.niceprelabel2 input').outerHeight() - $('label.niceprelabel2 span').css('padding-top')) })
-    $('.filecontainer').click(function(){
+    
+    $('.filecontainer').live('click' ,function(){
         $( '#' + $(this).attr('rel') ).trigger('click');
+        //console.log(  '#' + $(this).attr('rel') ); // still working on this one
     });
+    
+    $('label.niceprelabel2 span').css({'height' :  ( $('label.niceprelabel2 input').outerHeight() - $('label.niceprelabel2 span').css('padding-top')) })
+    
 });

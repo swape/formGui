@@ -35,7 +35,7 @@ min-width:170px;width:auto;outline:none;box-shadow:0 4px 6px rgba(50,50,50,0.1) 
 .input:focus, textarea:focus{box-shadow:0 0 5px rgba(0,0,0,0.6) inset;border-color:#777}
 input[readonly=readonly]{border:1px dotted #ccc;color:#555}
 input[disabled=disabled]{border:1px solid #ccc;color:#555;opacity:0.6}
-input[type=file]{position: absolute;left: -10000px;}
+input[type=file]{position:absolute;left:-10000px}
 /* textarea */
 textarea{border:1px solid #ccc;margin:1px;
 font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
@@ -151,3 +151,20 @@ filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFb5b5b5', en
 .selectname:hover .selectarrow span{border-top-color:#369}
 .selectarrow span{border-style:solid;border-color:transparent;border-width:0.53em;display:-moz-inline-box;display:inline-block;font-size:8px;height:0;line-height:0;
 position:relative;vertical-align:middle;width:0;margin-top:1px;border-top-width:1em;border-top-style:solid;border-top-color:#999}
+
+/* breadcrumbs */
+ul.breadcrumbs{list-style:none;padding:0;margin:5px}
+ul.breadcrumbs li{float:left}
+ul.breadcrumbs li a{padding:3px 10px 3px 23px;float:left;text-decoration:none;color:#444;position:relative;text-shadow:0 1px 0 rgba(255,255,255,.5);
+background-color:#ddd; 
+background-image:linear-gradient(right , #E0E0E0 38%, #ccc 100%);
+background-image:-o-linear-gradient(right , #E0E0E0 38%, #ccc 100%);
+background-image:-moz-linear-gradient(right , #E0E0E0 38%, #ccc 100%);
+background-image:-webkit-linear-gradient(right , #E0E0E0 38%, #ccc 100%);
+background-image:-ms-linear-gradient(right , #E0E0E0 38%, #ccc 100%);
+}
+ul.breadcrumbs li:first-child a{padding-left:15px;border-radius:5px 0 0 5px}
+ul.breadcrumbs a::before{content:"";position:absolute;top:50%;margin-top:-12px;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:12px solid;right:-12px}
+ul.breadcrumbs a::before{z-index:2;border-left-color:#E0E0E0}
+ul.breadcrumbs a:hover::before , ul.breadcrumbs a.active::before{border-left-color:#666}
+ul.breadcrumbs a:hover , ul.breadcrumbs a.active{background:#666;color:#fff;text-shadow:1px 0 1px rgba(0,0,0,0.7)}

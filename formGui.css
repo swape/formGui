@@ -23,7 +23,7 @@ background:#fff -o-linear-gradient(-90deg, #b5b5b5, #ccc);
 filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFb5b5b5', endColorstr='#FFCCCCCC')}
 .button:active{border:1px solid #555;color:#333;box-shadow:0 0 7px rgba(0,0,0,0.6) inset}
 /* input */
-.input{border:1px solid #ccc;font-size:100%;line-height:200%;
+.input{border:1px solid #ccc;font-size:100%;line-height:165%;
 font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
 background:#fff -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#FFF));
 background:#fff -moz-linear-gradient(-90deg, #f2f2f2, #FFF);

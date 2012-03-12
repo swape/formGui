@@ -38,9 +38,16 @@ $(document).ready(function(){
         $(this).parent().children('span.radio').addClass('radio2');
     });
     
-    $('button[type!=submit]').each(function(i){
-        $(this).after('<a href="#" class="button" id="sb-' + i + '" onclick="' + "$('#sbs-" + i + "').trigger('click');return false;" + '" >' + $(this).html() + '</a>');
-        $(this).attr('id', 'sbs-' + i ).hide();
+    $('button').each(function(i){
+        var inputType = $(this).attr('type');
+        if( inputType != 'submit'){
+            var buttonName = $(this).attr('id');
+            if(buttonName == '' || buttonName == undefined){
+                buttonName = 'button-normal-' + i ;
+                $(this).attr('id' , buttonName);
+            }
+            $(this).after('<a href="#" class="button" id="sb-' + i + '" onclick="' + "$('#" + buttonName + "').trigger('click');return false;" + '" >' + $(this).html() + '</a>');
+        }
     });
     
     $('button[type=submit] , input[type=submit]').each(function(i){
@@ -48,17 +55,26 @@ $(document).ready(function(){
         if(thisVal == ''){
             thisVal = $(this).html();
         }
-        $(this).after('<a href="#" class="button" id="sbs-' + i + '" onclick="' + "$(this).closest('form').submit();return false;" + '" >' + thisVal + '</a>');
-        $(this).hide();
+        $(this).after('<a href="#" class="button" id="submitFormTrigger-' + i + '" onclick="' + "$(this).closest('form').submit();return false;" + '" >' + thisVal + '</a>');
     });
     
     $('input[type=reset] , input[type=button]').each(function(i){
-        $(this).after('<a href="#" class="button" id="ib-' + i + '" onclick="' + "$('#ibs-" + i + "').trigger('click');return false;" + '" >' + $(this).val() + '</a>');
-        $(this).attr('id', 'ibs-' + i ).hide();
+        var buttonName = $(this).attr('id');
+        if(buttonName == '' || buttonName == undefined){
+            buttonName = 'button-' + i ;
+            $(this).attr('id' , buttonName);
+        }
+        $(this).after('<a href="#" class="button" id="ib-' + i + '" onclick="' + "$('#" + buttonName + "').trigger('click');return false;" + '" >' + $(this).val() + '</a>');
     });
  
    $('select').each(function(i){
         if( $(this).attr('multiple') != 'multiple' ){
+            var selectName = $(this).attr('id');
+            if(selectName == '' || selectName == undefined){
+                selectName = 'selectname-' + i ;
+                $(this).attr('id' , selectName);
+            }
+            
             var strInner = '';
             var intCount = 0;
             $(this).find('option').each(function(){
@@ -69,10 +85,8 @@ $(document).ready(function(){
             if(intCount >= 4){
                 strBigSelect = ' bigselect';
             }
-            $(this).after('<div class="selectcontainer " rel="' + 's-' + i + '" id="ss-' + i + '" ><div class="selectname" rel="selOp' + i + '" ><div class="selecttitle">...</div><div class="selectarrow"><span></span></div></div><div id="selOp' + i + '" class="selectbox' + strBigSelect + '" >' 
+            $(this).after('<div class="selectcontainer " rel="' + selectName + '" id="s-' + selectName + '" ><div class="selectname" rel="' + selectName + '-options" ><div class="selecttitle">...</div><div class="selectarrow"><span></span></div></div><div id="' + selectName + '-options" class="selectbox' + strBigSelect + '" >' 
             + strInner + '</div></div>');
-            $(this).attr('id', 's-' + i );
-            $(this).hide();
         }
     });
     
@@ -86,10 +100,8 @@ $(document).ready(function(){
         var thisSel = '#'  + $(this).parent().parent().attr('rel');
         var titleID = '#s'  + $(this).parent().parent().attr('rel') + ' .selecttitle';
         $( thisSel ).removeProp('selected');
-        
-        $( thisSel ).val($(this).attr('href').replace('#' , '') );
+        $( thisSel ).val( $(this).attr('href').replace('#' , '')  );
         $( titleID ).html($(this).html());
-        
         $(this).addClass('activeSelect');
         $(this).parent().slideUp();
         $(thisSel).change();
@@ -101,21 +113,25 @@ $(document).ready(function(){
             if( $(this).attr('multiple') != 'multiple' ){
                 var thisID = $(this).attr('id');
                 var selText = $('#' + thisID + ' option:selected').text();
-                $('#s' + thisID + ' .selecttitle').html(selText);
+                $('#s-' + thisID + ' .selecttitle').html(selText);
         }
         })
     });
     
     $('select').change();
     
-    
     /* File upload */
     $('input[type=file]').each(function(i){
         var selFirst = 'Select file';
+        var FileInputName = $(this).attr('id');
+            if(FileInputName == '' || FileInputName == undefined){
+                FileInputName = 'fileInput-' + i ;
+                $(this).attr('id' , FileInputName);
+            }
+        
         if($(this).attr('title')){ selFirst = $(this).attr('title'); }
-            $(this).after('<div class="filecontainer" rel="' + 'f-' + i + '" id="if-' + i + '" ><div class="fileuploadtitle" >' 
+            $(this).after('<div class="filecontainer" rel="' + FileInputName + '" id="i' + FileInputName + '" ><div class="fileuploadtitle" >' 
             + selFirst + '</div><div class="filenamediv"><span class="filename"></span></div></div>');
-            $(this).attr('id', 'f-' + i );
     });
     
     $('input[type=file]').change(function(){
@@ -133,7 +149,7 @@ $(document).ready(function(){
     
     $('.filecontainer').live('click' ,function(){
         $( '#' + $(this).attr('rel') ).trigger('click');
-        //console.log(  '#' + $(this).attr('rel') ); // still working on this one
+        // still working on this one
     });
     
     $('label.niceprelabel2 span').css({'height' :  ( $('label.niceprelabel2 input').outerHeight() - $('label.niceprelabel2 span').css('padding-top')) })

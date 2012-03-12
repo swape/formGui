@@ -20,7 +20,7 @@ $(document).ready(function(){
             $(this).parent().children('span.checkbox').addClass('checkbox2');
         }
         else{
-            $(this).parent().children('span.checkbox').removeClass('checkbox2')
+            $(this).parent().children('span.checkbox').removeClass('checkbox2');
         }
     });
     

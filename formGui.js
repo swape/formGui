@@ -130,26 +130,36 @@ $(document).ready(function(){
             }
         
         if($(this).attr('title')){ selFirst = $(this).attr('title'); }
-            $(this).after('<div class="filecontainer" rel="' + FileInputName + '" id="i' + FileInputName + '" ><div class="fileuploadtitle" >' 
-            + selFirst + '</div><div class="filenamediv"><span class="filename"></span></div></div>');
+        
+        $(this).after('<div class="filecontainer" rel="' + FileInputName + '" id="i' + FileInputName + '" ><div class="fileuploadtitle" >' 
+        + selFirst + '</div><div class="filenamediv"><span class="filename"></span></div></div>');
+        $(this).appendTo('#' + 'i' + FileInputName );
     });
     
     $('input[type=file]').change(function(){
         var spanid = $(this).attr('id');
-        $(this).hide();
         var myfilename = $(this).val();
         myfilename = myfilename.replace(/C:\\fakepath\\/gi, "");
-           if(myfilename != myfilename.substring(0,26) ){
-               myfilename = myfilename.substring(0,25) + '...'
-           }
-           if($( '#i' + spanid + ' .filename').html() != myfilename ){
-              $( '#i' + spanid +  ' .filename').html(myfilename);
-           }
+        if(myfilename != myfilename.substring(0,26) ){
+            myfilename = myfilename.substring(0,25) + '...'
+        }
+        if($( '#i' + spanid + ' .filename').html() != myfilename ){
+            $( '#i' + spanid +  ' .filename').html(myfilename);
+        }
     });
     
-    $('.filecontainer').live('click' ,function(){
-        $( '#' + $(this).attr('rel') ).trigger('click');
-        // still working on this one
+    $(".filecontainer").mousemove(function(e){
+      var offset = $(this).offset();
+      var leftT = offset.left + $(this).outerWidth() - 10;
+      var topT = offset.top + $(this).outerHeight() - 10;
+      var pix = e.pageX ; var piy = e.pageY;
+      
+      if(e.pageX >= leftT){ pix = leftT;}
+      if(e.pageX <= (offset.left + 10)){ pix = (offset.left + 10);}
+      if(e.pageY >= topT){ piy = topT;}
+      if(e.pageY <= ( offset.top + 10) ){ piy = ( offset.top +  10);}
+      
+      $(this).find('input').css({top: piy , left : pix});
     });
     
     $('label.niceprelabel2 span').css({'height' :  ( $('label.niceprelabel2 input').outerHeight() - $('label.niceprelabel2 span').css('padding-top')) })

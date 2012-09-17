@@ -92,8 +92,7 @@ border:1px solid #ccc;cursor:pointer;background:#fff -webkit-gradient(linear,lef
 background:#fff -moz-linear-gradient(-90deg,#f2f2f2,#EFEFEF);
 background:#fff -o-linear-gradient(-90deg,#f2f2f2,#EFEFEF);
 filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFf2f2f2',endColorstr='#FFEFEFEF');
-border-radius:3px 0px 0px 3px;text-shadow:0 -1px 1px rgba(255,255,255,0.6);
-min-width:200px}
+border-radius:3px 0px 0px 3px;text-shadow:0 -1px 1px rgba(255,255,255,0.6);min-width:200px}
 .formgui .selectarrow{cursor:pointer;background-color:#f2f2f2;display:table-cell;padding:0px 3px;border:1px solid #ccc;border-left:0px solid #fff;border-radius:0px 3px 3px 0px}
 .formgui .selectname:hover .selecttitle{box-shadow:0 0 10px rgba(0,0,0,0.2) inset;border-color:#666}
 .formgui .selectname:hover .selectarrow{background-color:#AAA;border-color:#666}
@@ -106,5 +105,9 @@ min-width:300px;max-width:400px;text-align:left;margin:0 1px}
 .formgui .fileinput label{display:block;padding:0;cursor:pointer}
 .formgui .fileinput .filebtn{display:inline-block;border-radius:3px 0px 0px 3px}
 .formgui .fileinput .filename{display:inline-block;height:20px;padding:3px 10px;overflow:hidden;background-color:#fff;
-border:1px solid #ccc;margin:1px 1px 0px -1px;border-radius:0 3px 3px 0;vertical-align:middle;border-left:0px solid #fff;box-shadow:0 0 10px rgba(0,0,0,0.1) inset}
+border:1px solid #ccc;margin:0px 1px 0px -1px;border-radius:0 3px 3px 0;vertical-align:middle;border-left:0px solid #fff;box-shadow:0 0 10px rgba(0,0,0,0.1) inset}
 .formgui .fileinput:hover .filename{box-shadow:0 0 10px rgba(0,0,0,0.3) inset;border-color:#666}
+.formgui .grouped{font-size:0px}
+.formgui .grouped .button{margin:1px -1px 1px 0px;border-radius:0px}
+.formgui .grouped .button:last-child{border-radius:0px 3px 3px 0px}
+.formgui .grouped .button:first-child{border-radius:3px 0px 0px 3px}

@@ -1,7 +1,8 @@
 $(document).ready(function(){
     var thisclass = $('.formgui');
+    
      /*INPUTS*/
-    thisclass.find('input').each(function(i){
+    thisclass.find('input:not(.isStyled)').each(function(i){
         var inputType = $(this).attr('type');
         var inputID = $(this).attr('id');
         var thisVal = $(this).val();
@@ -12,21 +13,25 @@ $(document).ready(function(){
         }
         if( $(this).parent().get(0).tagName == 'LABEL' && ( inputType == 'checkbox' || inputType == 'radio' )){ $(this).parent().css({'cursor':'pointer'});}
         if( inputType != 'file' && inputType != 'radio' && inputType != 'checkbox' && inputType != 'button' && inputType != 'reset' && inputType != 'submit' && inputType != 'range' ){
-            $(this).addClass('input');
+            $(this).addClass('input isStyled');
         }
         else if(inputType == 'checkbox'){
             if($(this).attr('checked')){ $(this).after('<span class="checkbox checkbox2"  onclick="' + "$('#" + inputID + "').trigger('click');return false;" + '" ></span>'); }
             else{ $(this).after('<span class="checkbox"  onclick="' + "$('#" + inputID + "').trigger('click');return false;" + '" ></span>');}
+            $(this).addClass('isStyled');
         }
         else if(inputType == 'radio'){
             if($(this).attr('checked')){$(this).after('<span class="radio radio2"  onclick="' + "$('#" + inputID + "').trigger('click');return false;" + '" ></span>');}
             else{$(this).after('<span class="radio"  onclick="' + "$('#" + inputID + "').trigger('click');return false;" + '" ></span>');}
+            $(this).addClass('isStyled');
         }
         else if(inputType == 'reset' || inputType == 'button'){
             $(this).after('<a href="#" class="button" id="ib-' + i + '" onclick="' + "$('#" + inputID + "').trigger('click');return false;" + '" >' + $(this).val() + '</a>');
+            $(this).addClass('isStyled');
         }
         else if(inputType == 'submit'){
             $(this).after('<a href="#" class="button" id="submitFormTrigger-' + i + '" onclick="' + "$(this).closest('form').submit();return false;" + '" >' + thisVal + '</a>');
+            $(this).addClass('isStyled');
         }
     });
     
@@ -41,7 +46,7 @@ $(document).ready(function(){
     });
     
     /*BUTTONS*/
-    thisclass.find('button').each(function(i){
+    thisclass.find('button:not(.isStyled)').each(function(i){
         var btnType = $(this).attr('type');
         var buttonName = $(this).attr('id');
         if(buttonName == '' || buttonName == undefined){
@@ -49,14 +54,14 @@ $(document).ready(function(){
             $(this).attr('id' , buttonName);
         }
         if( btnType != 'submit'){
-            $(this).hide().after('<a href="#" class="button" id="sb-' + i + '" onclick="' + "$('#" + buttonName + "').trigger('click');return false;" + '" >' + $(this).html() + '</a>');
+            $(this).addClass('isStyled').hide().after('<a href="#" class="button" id="sb-' + i + '" onclick="' + "$('#" + buttonName + "').trigger('click');return false;" + '" >' + $(this).html() + '</a>');
         }
         else{
-            $(this).after('<a href="#" class="button" id="submitFormTrigger-' + i + '" onclick="' + "$(this).closest('form').submit();return false;" + '" >' + $(this).html() + '</a>');
+            $(this).addClass('isStyled').after('<a href="#" class="button" id="submitFormTrigger-' + i + '" onclick="' + "$(this).closest('form').submit();return false;" + '" >' + $(this).html() + '</a>');
         }
     });
     /*SELECT*/
-   thisclass.find('select').each(function(i){
+   thisclass.find('select:not(.isStyled)').each(function(i){
         if( $(this).attr('multiple') != 'multiple' ){
             var selectID = $(this).attr('id');
             if(selectID == '' || selectID == undefined){
@@ -77,7 +82,7 @@ $(document).ready(function(){
             if(intCount >= 4){
                 strBigSelect = ' bigselect';
             }
-            $(this).after('<div class="selectcontainer " rel="' + selectID + '" id="s-' + selectID + '" ><div class="selectname" rel="' + selectID + '-options" ><div class="selecttitle">' + strSelectedName + '</div><div class="selectarrow"><span></span></div></div><div id="' + selectID + '-options" class="selectbox' + strBigSelect + '" >' 
+            $(this).addClass('isStyled').after('<div class="selectcontainer " rel="' + selectID + '" id="s-' + selectID + '" ><div class="selectname" rel="' + selectID + '-options" ><div class="selecttitle">' + strSelectedName + '</div><div class="selectarrow"><span></span></div></div><div id="' + selectID + '-options" class="selectbox' + strBigSelect + '" >' 
             + strInner + '</div></div>');
         
             $('#s-' + selectID ).prepend($(this));
@@ -113,13 +118,13 @@ $(document).ready(function(){
         })
     });
     /*FILE*/
-    thisclass.find('input[type=file]').each(function(i){
+    thisclass.find('input[type=file]:not(.isStyled)').each(function(i){
         var fileID = $(this).attr('id');
         if(fileID == '' || fileID == undefined){
             fileID = 'file-' + i ;
             $(this).attr('id' , fileID);
         }
-        $(this).addClass('oldfileinput');
+        $(this).addClass('oldfileinput isStyled');
         $(this).data('ftitle','ftitle-' + i);
         var fileTitle = $(this).attr('title');
         if(fileTitle == '' || fileTitle == undefined){

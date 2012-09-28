@@ -90,8 +90,8 @@ $(document).ready(function(){
     });
     
     thisclass.find('.selectname').live('click',function(){
-        $('.selectbox').slideUp(100);
         $('#' + $(this).attr('rel') ).slideToggle();
+        $('.selectbox:not(#' + $(this).attr('rel') + ')').slideUp(100);
         return false;
     });
        

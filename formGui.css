@@ -93,12 +93,12 @@ background:#fff -moz-linear-gradient(-90deg,#f2f2f2,#EFEFEF);
 background:#fff -o-linear-gradient(-90deg,#f2f2f2,#EFEFEF);
 filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFf2f2f2',endColorstr='#FFEFEFEF');
 border-radius:3px 0px 0px 3px;text-shadow:0 -1px 1px rgba(255,255,255,0.6);min-width:200px}
-.formgui .selectarrow{cursor:pointer;background-color:#f2f2f2;display:table-cell;padding:0px 3px;border:1px solid #ccc;border-left:0px solid #fff;border-radius:0px 3px 3px 0px}
+.formgui .selectarrow{cursor:pointer;background-color:#f2f2f2;display:table-cell;padding:0px 6px;border:1px solid #ccc;border-left:0px solid #fff;border-radius:0px 3px 3px 0px}
 .formgui .selectname:hover .selecttitle{box-shadow:0 0 10px rgba(0,0,0,0.2) inset;border-color:#666}
 .formgui .selectname:hover .selectarrow{background-color:#AAA;border-color:#666}
 .formgui .selectname:hover .selectarrow span{border-top-color:#369}
 .formgui .selectarrow span{border-style:solid;border-color:transparent;border-width:0.53em;display:-moz-inline-box;display:inline-block;font-size:8px;height:0;line-height:0;
-position:relative;vertical-align:middle;width:0;margin-top:8px;border-top-width:1em;border-top-style:solid;border-top-color:#999}
+position:relative;vertical-align:middle;width:0;margin-top:9px;border-top-width:1em;border-top-style:solid;border-top-color:#999}
 .oldfileinput{position:absolute;margin:0;opacity:0;filter:alpha(opacity=0);height:28px;cursor:pointer}
 .formgui .fileinput{display:inline-block;font-size:13px;line-height:21px;vertical-align:middle;overflow:hidden;
 min-width:300px;max-width:400px;text-align:left;margin:0 1px}

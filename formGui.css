@@ -22,6 +22,42 @@ background:#fff -moz-linear-gradient(-90deg,#b5b5b5,#ccc);
 background:#fff -o-linear-gradient(-90deg,#b5b5b5,#ccc);
 filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFb5b5b5',endColorstr='#FFCCCCCC')}
 .formgui .button:active{border:1px solid #555;color:#333;box-shadow:0 0 7px rgba(0,0,0,0.6) inset}
+.formgui .redbutton{background-color:#ff5b67;
+background:#fff -webkit-gradient(linear,left top,left bottom,from(#ff5b67),to(#ec3542));
+background:#fff -moz-linear-gradient(-90deg,#ff5b67,#ec3542);
+background:#fff -o-linear-gradient(-90deg,#ff5b67,#ec3542);
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFff5b67',endColorstr='#FFec3542');
+color:#fff;text-shadow:0 1px 1px rgba(0,0,0,0.6);border-color:#666}
+.formgui .redbutton:hover{background-color:#ec3542;
+background:#fff -webkit-gradient(linear,left top,left bottom,from(#ec3542),to(#cf3640));
+background:#fff -moz-linear-gradient(-90deg,#ec3542,#cf3640);
+background:#fff -o-linear-gradient(-90deg,#ec3542,#cf3640);
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFec3542',endColorstr='#FFcf3640');
+box-shadow:0 0 8px rgba(50,0,0,0.6);text-shadow:0 1px 1px rgba(255,255,255,0.4)}
+.formgui .bluebutton{background-color:#83bef9;
+background:#fff -webkit-gradient(linear,left top,left bottom,from(#83bef9),to(#71aae2));
+background:#fff -moz-linear-gradient(-90deg,#83bef9,#71aae2);
+background:#fff -o-linear-gradient(-90deg,#83bef9,#3546ec);
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF83bef9',endColorstr='#FF71aae2');
+color:#fff;text-shadow:0 1px 1px rgba(0,0,0,0.6);border-color:#666;}
+.formgui .bluebutton:hover{background-color:#71aae2;
+background:#fff -webkit-gradient(linear,left top,left bottom,from(#71aae2),to(#548ec9));
+background:#fff -moz-linear-gradient(-90deg,#71aae2,#548ec9);
+background:#fff -o-linear-gradient(-90deg,#71aae2,#548ec9);
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF71aae2',endColorstr='#FF548ec9');
+box-shadow:0 0 8px rgba(0,0,50,0.6);text-shadow:0 1px 1px rgba(255,255,255,0.4)}
+.formgui .greenbutton{background-color:#8aee73;
+background:#fff -webkit-gradient(linear,left top,left bottom,from(#8aee73),to(#6bd053));
+background:#fff -moz-linear-gradient(-90deg,#8aee73,#6bd053);
+background:#fff -o-linear-gradient(-90deg,#8aee73,#6bd053);
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF8aee73',endColorstr='#FF6bd053');
+border-color:#666}
+.formgui .greenbutton:hover{background-color:#6bd053;
+background:#fff -webkit-gradient(linear,left top,left bottom,from(#6bd053),to(#4fac39));
+background:#fff -moz-linear-gradient(-90deg,#6bd053,#4fac39);
+background:#fff -o-linear-gradient(-90deg,#6bd053,#4fac39);
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF6bd053',endColorstr='#FF4fac39');
+box-shadow:0 0 8px rgba(0,50,0,0.6);text-shadow:0 1px 1px rgba(255,255,255,0.4)}
 /* input */
 .formgui .input{border:1px solid #ccc;vertical-align:middle;font-size:13px;line-height:14px;height:16px;
 font-family:"Lucida Grande",Tahoma,Arial,Verdana,sans-serif;
@@ -88,12 +124,12 @@ color:#444;text-decoration:none;text-shadow:0 1px 1px rgba(255,255,255,0.6);bord
 .formgui .selectbox a:hover,.formgui a.activeSelect{background-color:#666;color:#fff;text-shadow:0 1px 1px rgba(0,0,0,0.8)}
 .formgui .bigselect{max-height:260px;overflow-y:scroll}
 .formgui .selecttitle{display:table-cell;padding:2px 10px 3px 10px;height:21px;vertical-align:middle;
-border:1px solid #ccc;cursor:pointer;background:#fff -webkit-gradient(linear,left top,left bottom,from(#f2f2f2),to(#EFEFEF));
+border:1px solid #ccc;cursor:context-menu;background:#fff -webkit-gradient(linear,left top,left bottom,from(#f2f2f2),to(#EFEFEF));
 background:#fff -moz-linear-gradient(-90deg,#f2f2f2,#EFEFEF);
 background:#fff -o-linear-gradient(-90deg,#f2f2f2,#EFEFEF);
 filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFf2f2f2',endColorstr='#FFEFEFEF');
 border-radius:3px 0px 0px 3px;text-shadow:0 -1px 1px rgba(255,255,255,0.6);min-width:200px}
-.formgui .selectarrow{cursor:pointer;background-color:#f2f2f2;display:table-cell;padding:0px 6px;border:1px solid #ccc;border-left:0px solid #fff;border-radius:0px 3px 3px 0px}
+.formgui .selectarrow{cursor:context-menu;background-color:#f2f2f2;display:table-cell;padding:0px 6px;border:1px solid #ccc;border-left:0px solid #fff;border-radius:0px 3px 3px 0px}
 .formgui .selectname:hover .selecttitle{box-shadow:0 0 10px rgba(0,0,0,0.2) inset;border-color:#666}
 .formgui .selectname:hover .selectarrow{background-color:#AAA;border-color:#666}
 .formgui .selectname:hover .selectarrow span{border-top-color:#369}
@@ -107,7 +143,7 @@ min-width:300px;max-width:400px;text-align:left;margin:0 1px}
 .formgui .fileinput .filename{display:inline-block;height:20px;padding:3px 10px;overflow:hidden;background-color:#fff;
 border:1px solid #ccc;margin:0px 1px 0px -1px;border-radius:0 3px 3px 0;vertical-align:middle;border-left:0px solid #fff;box-shadow:0 0 10px rgba(0,0,0,0.1) inset}
 .formgui .fileinput:hover .filename{box-shadow:0 0 10px rgba(0,0,0,0.3) inset;border-color:#666}
-.formgui .grouped{font-size:0px}
+.formgui .grouped{font-size:0px;}
 .formgui .grouped .button{margin:1px -1px 1px 0px;border-radius:0px}
 .formgui .grouped .button:last-child{border-radius:0px 3px 3px 0px}
 .formgui .grouped .button:first-child{border-radius:3px 0px 0px 3px}

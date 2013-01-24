@@ -49,15 +49,16 @@ $(document).ready(function(){
     thisclass.find('button:not(.isStyled)').each(function(i){
         var btnType = $(this).attr('type');
         var buttonName = $(this).attr('id');
+        var buttonClasses = $(this).attr('class');
         if(buttonName == '' || buttonName == undefined){
             buttonName = 'bt-' + i ;
             $(this).attr('id' , buttonName);
         }
         if( btnType != 'submit'){
-            $(this).addClass('isStyled').hide().after('<a href="#" class="button" id="sb-' + i + '" onclick="' + "$('#" + buttonName + "').trigger('click');return false;" + '" >' + $(this).html() + '</a>');
+            $(this).addClass('isStyled').hide().after('<a href="#" class="button ' + buttonClasses + '" id="sb-' + i + '" onclick="' + "$('#" + buttonName + "').trigger('click');return false;" + '" >' + $(this).html() + '</a>');
         }
         else{
-            $(this).addClass('isStyled').after('<a href="#" class="button" id="submitFormTrigger-' + i + '" onclick="' + "$(this).closest('form').submit();return false;" + '" >' + $(this).html() + '</a>');
+            $(this).addClass('isStyled').after('<a href="#" class="button ' + buttonClasses + '" id="submitFormTrigger-' + i + '" onclick="' + "$(this).closest('form').submit();return false;" + '" >' + $(this).html() + '</a>');
         }
     });
     /*SELECT*/
@@ -82,16 +83,22 @@ $(document).ready(function(){
             if(intCount >= 4){
                 strBigSelect = ' bigselect';
             }
-            $(this).addClass('isStyled').after('<div class="selectcontainer " rel="' + selectID + '" id="s-' + selectID + '" ><div class="selectname" rel="' + selectID + '-options" ><div class="selecttitle">' + strSelectedName + '</div><div class="selectarrow"><span></span></div></div><div id="' + selectID + '-options" class="selectbox' + strBigSelect + '" >' 
+            $(this).addClass('isStyled').after('<div class="selectcontainer " rel="' + selectID + '" id="s-' + selectID + '" ><div data-sid ="#'+ selectID +'" class="selectname" rel="' + selectID + '-options" ><div class="selecttitle">' + strSelectedName + '</div><div class="selectarrow"><span></span></div></div><div id="' + selectID + '-options" class="selectbox' + strBigSelect + '" >' 
             + strInner + '</div></div>');
         
             $('#s-' + selectID ).prepend($(this));
         }
     });
     
-    thisclass.find('.selectname').live('click',function(){
-        $('#' + $(this).attr('rel') ).slideToggle();
-        $('.selectbox:not(#' + $(this).attr('rel') + ')').slideUp(100);
+    thisclass.find('.selectname').live('click touchstart',function(){
+    	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+    		var thisSel = $(this).data('sid') ;
+	    	$(thisSel).focus().trigger('click touchstart');		
+	    }else{
+			$('#' + $(this).attr('rel') ).slideToggle();
+			$('.selectbox:not(#' + $(this).attr('rel') + ')').slideUp(100);
+		}
+        
         return false;
     });
        

@@ -85,15 +85,21 @@ $(document).ready(function(){
             }
             $(this).addClass('isStyled').after('<div class="selectcontainer " rel="' + selectID + '" id="s-' + selectID + '" ><div data-sid ="#'+ selectID +'" class="selectname" rel="' + selectID + '-options" ><div class="selecttitle">' + strSelectedName + '</div><div class="selectarrow"><span></span></div></div><div id="' + selectID + '-options" class="selectbox' + strBigSelect + '" >' 
             + strInner + '</div></div>');
+            
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ){
+            	$(this).css({'width' : $('#s-' + selectID ).width() , 'height' : $('#s-' + selectID ).height() , 'opacity' : 0 ,'display':'block' });
+            }else{
+	            $(this).css({'opacity' : 0 , 'margin-left': '-50000px' , 'display' : 'none' });
+            }
         
             $('#s-' + selectID ).prepend($(this));
         }
     });
     
-    thisclass.find('.selectname').live('click touchstart',function(){
+    thisclass.find('.selectname').live('touchstart click',function(){
     	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
     		var thisSel = $(this).data('sid') ;
-	    	$(thisSel).focus().trigger('click touchstart');		
+	    	$(thisSel).focus().trigger('touchstart click').show();
 	    }else{
 			$('#' + $(this).attr('rel') ).slideToggle();
 			$('.selectbox:not(#' + $(this).attr('rel') + ')').slideUp(100);

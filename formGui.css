@@ -119,7 +119,7 @@ background:#fff -o-linear-gradient(-90deg,#69b,#369);
 background-image: -ms-linear-gradient(top, #6699bb 0%, #336699 100%);}
 .formgui input[type=radio],.formgui input[type=checkbox]{width:1px;height:1px;opacity:0;position:absolute}
 /*SELECT*/
-.formgui select:not([multiple]){position:absolute;left:-10000px}
+.formgui select:not([multiple]){width:0;height:0;position:absolute}
 .formgui .selectcontainer{overflow:hidden;min-width:100px;max-width:350px;display:inline-block;margin:1px;vertical-align:middle;font-size:13px;line-height:21px;vertical-align:middle}
 .formgui .selectbox{border:1px solid #ccc;padding:5px;display:none;z-index:1000;min-width:210px;
 background:#fff -webkit-gradient(linear,left top,left bottom,from(#f2f2f2),to(#EFEFEF));

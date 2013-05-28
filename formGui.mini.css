@@ -45,3 +45,10 @@
 .formgui .grouped .button{margin:1px -1px 1px 0px;border-radius:0px}
 .formgui .grouped .button:last-child{border-radius:0 3px 3px 0px}
 .formgui .grouped .button:first-child{border-radius:3px 0 0 3px}
+.overmenu{}
+.data-menu{display:none;position:absolute;list-style:none;box-shadow:0 0 10px rgba(0,0,0,0.8);border-radius:5px;font-size:0px;padding:4px;margin:0px;background-color:rgba(0,0,0,0.8)}
+.data-menu li{float:left;display:inline}
+.data-menu li a{font-size:14px;border:0 solid #fff;border-right:1px solid #ccc;padding:4px 7px;display:inline-block;min-width:20px;text-align:center;background:#fff -webkit-gradient(linear,left top,left bottom,from(#f2f2f2),to(#EFEFEF));background:#fff -moz-linear-gradient(-90deg,#f2f2f2,#EFEFEF);background:#fff -o-linear-gradient(-90deg,#f2f2f2,#EFEFEF);background-image:-ms-linear-gradient(top, #f2f2f2 0%, #EFEFEF 100%);color:#333;text-decoration:none}
+.data-menu li a:hover{box-shadow:0 -5px 5px rgba(0,0,0,0.2) inset}
+.data-menu li:last-child a{border-radius:0 3px 3px 0}
+.data-menu li:first-child a{border-radius:3px 0 0 3px}

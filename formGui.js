@@ -16,12 +16,12 @@ $(document).ready(function(){
             $(this).addClass('input isStyled');
         }
         else if(inputType == 'checkbox'){
-            if($(this).attr('checked')){ $(this).after('<span class="checkbox checkbox2"  onclick="' + "$('#" + inputID + "').trigger('click');return false;" + '" ></span>'); }
+            if($(this).prop("checked")){ $(this).after('<span class="checkbox checkbox2"  onclick="' + "$('#" + inputID + "').trigger('click');return false;" + '" ></span>'); }
             else{ $(this).after('<span class="checkbox"  onclick="' + "$('#" + inputID + "').trigger('click');return false;" + '" ></span>');}
             $(this).addClass('isStyled');
         }
         else if(inputType == 'radio'){
-            if($(this).attr('checked')){$(this).after('<span class="radio radio2"  onclick="' + "$('#" + inputID + "').trigger('click');return false;" + '" ></span>');}
+            if($(this).prop("checked")){$(this).after('<span class="radio radio2"  onclick="' + "$('#" + inputID + "').trigger('click');return false;" + '" ></span>');}
             else{$(this).after('<span class="radio"  onclick="' + "$('#" + inputID + "').trigger('click');return false;" + '" ></span>');}
             $(this).addClass('isStyled');
         }
@@ -36,7 +36,7 @@ $(document).ready(function(){
     });
     
     $('input[type=checkbox]').change(function(){
-        if($(this).attr('checked')){ $(this).parent().children('span.checkbox').addClass('checkbox2');}
+        if($(this).prop("checked")){ $(this).parent().children('span.checkbox').addClass('checkbox2');}
         else{ $(this).parent().children('span.checkbox').removeClass('checkbox2'); }
     });
       
@@ -96,7 +96,7 @@ $(document).ready(function(){
         }
     });
     
-    thisclass.find('.selectname').live('touchstart click',function(){
+    thisclass.find('.selectname').on('touchstart click',function(){
     	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
     		var thisSel = $(this).data('sid') ;
 	    	$(thisSel).focus().trigger('touchstart click').show();
@@ -108,7 +108,7 @@ $(document).ready(function(){
         return false;
     });
        
-    thisclass.find('.selectitems').live('click', function(){
+    thisclass.find('.selectitems').on('click', function(){
         $(this).parent().find('a.activeSelect').removeClass('activeSelect');
         var thisSel = '#'  + $(this).parent().parent().attr('rel');
         var titleID = '#s'  + $(this).parent().parent().attr('rel') + ' .selecttitle';
@@ -121,7 +121,7 @@ $(document).ready(function(){
         return false;
     });
     
-    thisclass.find('select').live('change' ,function(){
+    thisclass.find('select').on('change' ,function(){
         $(this).each(function(){
             if( $(this).attr('multiple') != 'multiple' ){
                 var thisID = $(this).attr('id');
@@ -156,7 +156,7 @@ $(document).ready(function(){
         $($( '#' + $(this).data('id'))).width(thisW);
     });
     
-     thisclass.find('input[type=file]').live('change' ,function(){
+     thisclass.find('input[type=file]').on('change' ,function(){
         var myfilename = $(this).val();
         myfilename = myfilename.replace(/C:\\fakepath\\/gi, "");
         if(myfilename != myfilename.substring(0,26) ){
@@ -166,4 +166,31 @@ $(document).ready(function(){
             $( '#' + $(this).data('ftitle') ).html(myfilename);
         }
     });
+    
+    thisclass.find('.overmenu').on('click' , function(){
+    	var thisFor = '#' + $(this).data('menu');
+        var of = $(this).offset();
+        var w = $(this).outerWidth();
+        
+    	$('.menuopen').each(function(){
+    		if( '#' + $(this).attr('id') !=  thisFor ){
+	    		$(this).hide().removeClass('menuopen');
+    		}
+    	});
+    
+        $(thisFor).css({'top' : of.top - ($(this).outerHeight() / 2) - $(thisFor).outerHeight() , 'left' : of.left -  ($(thisFor).outerWidth() / 2) + ($(this).outerWidth() / 2) });
+        $(thisFor).toggle(200,'swing');
+        if($(thisFor).hasClass('menuopen') == false ){
+	        $(thisFor).show();
+	        $(thisFor).addClass('menuopen')
+        }
+        return false;
+    });
+    
+    thisclass.find('.overmenu').each(function(){
+	    var thisFor = '#' + $(this).data('menu');
+	    $(thisFor).addClass('data-menu');
+    });
+    
+    
 });
